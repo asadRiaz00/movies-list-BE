@@ -7,6 +7,7 @@ async function getMultiple(page = 1) {
     const rows = await db.query(
       `SELECT id, name, duration, rating FROM movies LIMIT ${offset},${config.listPerPage}`
     );
+    console.log(rows);
     const data = helper.emptyOrRows(rows);
     const meta = { page };
   
@@ -54,7 +55,7 @@ async function getMultiple(page = 1) {
     let message = 'Error in deleting movie';
   
     if (result.affectedRows) {
-      message = 'Movie deleted successfully';
+      message = 'movie deleted successfully';
     }
   
     return {message};
