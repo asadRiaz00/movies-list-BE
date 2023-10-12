@@ -12,6 +12,7 @@ function getOffset(currentPage = 1, listPerPage) {
         return row;
     }
     );
+    rows.sort((a, b) => (a.name > b.name) ? 1 : -1);
     return rows;
   }
   
